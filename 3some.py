@@ -1,13 +1,15 @@
+# return all the triplets that i != j, i != k , and j != k, and (num[i] + num[j] + num[k]) == 0
+
 class Solution:
     def threeSum(self, nums):
         nums.sort()
         result = []
 
         for i in range(len(nums)):
-            if nums[i] > 0:
+            if nums[i] > 0: # since nums array  is sorted if first element of the triple is greater than 0 then all the other elements of tiple will be greater than zero
                 break
 
-            if i == 0 or nums[i] != nums[i - 1]:
+            if i == 0 or nums[i] != nums[i - 1]: # if two sibling elements are equal they will generated duplicate triple
                 self.two_sum(nums, i, result)
 
         return result
@@ -35,3 +37,4 @@ class Solution:
 nums = [-4, -1, -1, 0, 1, 2]
 sol = Solution();
 print(sol.threeSum(nums))
+

@@ -2,14 +2,14 @@
 
 def two_sum(nums, target):
     seen = {}
-    
-    for i, num in enumerate(nums, start=1):
+
+    for i, num in enumerate(nums):
         need = target - num
 
         if need in seen:
-            return [seen[num], i]
+            return [seen[need], i]
 
-        seen[need] = i
+        seen[num] = i
 
     return None
 
@@ -27,7 +27,7 @@ def sorted_two_sum(nums, target):
         sum = nums[left] + nums[right]
 
         if sum == target:
-            return [left + 1 , right + 1]
+            return [left, right]
         elif sum < target:
             left +=1
         elif sum > target:
