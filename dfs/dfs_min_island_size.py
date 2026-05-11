@@ -14,8 +14,6 @@ def min_island(grid):
                 smallest = min(smallest, size)
 
     return smallest
-            
-    
 
 
 def dfs_iterative(grid, start_row, start_col, visited):
